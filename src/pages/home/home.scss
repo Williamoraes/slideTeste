@@ -1,0 +1,31 @@
+page-home {
+    .card{
+        border-radius: 10px;
+        
+    }
+
+    p{
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+ 
+    }
+
+    span{
+        font-family: "Times New Roman", Times, serif;
+        font-style: italic;
+        font-size: 10px;
+        color: rgb(187, 187, 187);
+    }
+
+    ion-card{
+        width: 100% !important;
+        height: 50% !important;
+        display: inline-block;
+    }
+
+    img{
+        width: 100% !important;
+        height: 70% !important;
+    }
+
+}

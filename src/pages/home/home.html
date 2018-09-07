@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card class="card" *ngFor="let new of listNews; let i=index" >
+    <img id="img" src="{{content[i]}}"/>
+    <ion-card-content >
+      <p>
+        {{new.title}}
+      </p>
+      <span>
+       {{atzString[i]}}
+      </span>
+    </ion-card-content>
+  </ion-card>
+ 
+</ion-content>
