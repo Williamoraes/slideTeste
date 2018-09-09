@@ -51,25 +51,30 @@ export class HomePage {
                       }, err =>{
                           console.log(err);
                       } ).then(data =>{
+                        var allContent= [];
                         for(let i=0; i< data.list.length; i++){
                           this._noticiasProvider.getImage(data.list[i].link).subscribe(data => {
                             const responseImg = data as any;
                             document.getElementById('img').innerHTML = responseImg;
                             var img = document.getElementById('img').getElementsByTagName('meta');
-                             this.content[i] = img[img.length-1].getAttribute('content');
+                            for(let j=0; j<img.length; j++){
+                            allContent[j] = img[j].getAttribute('content');
+                            var patt = new RegExp('.jp');
+                            var contain = patt.test(allContent[j]);
+                            if(contain == true){
+                              this.content[i] = allContent[j];
+                              console.log(allContent[j]);
+                            }
+                            }
+                          //this.content[i] = img[img.length-1].getAttribute('content');
                             
                             
                            // var text = responseImg.;
-                           console.log(this.content);
+                        //   console.log(this.content);
                          });
 
                         }
-                      })
-                      
-
-                      
-
-    
+                      })                  
   }
 
   formatdate(){
