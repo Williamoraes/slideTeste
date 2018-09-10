@@ -41,7 +41,7 @@ export class HomePage {
                             var ano=dataAtz.getFullYear();
                             var hora=dataAtz.getHours();
                             var minuto=dataAtz.getMinutes();
-                            this.atzString[i]=this.zeroFill(dia,2)+"/"+this.zeroFill(mes,2)+"/"+ano+" | "+this.zeroFill(hora,2)+":"+this.zeroFill(minuto,2);
+                            this.atzString[i]=this.zeroFill(dia,2)+"."+this.zeroFill(mes,2)+"."+ano+" | "+this.zeroFill(hora,2)+":"+this.zeroFill(minuto,2);
                             }     
                           }
                           

@@ -1,24 +1,31 @@
 page-home {
     .card{
         border-radius: 10px;
-        
     }
 
-    p{
+    .card-md p{
+        line-height: 0.8;
+    }
+
+    .title{
         font-family: "Times New Roman", Times, serif;
-        font-size: 20px;
+        font-size: 11px;
+        color: rgb(146, 146, 146)
  
     }
 
-    span{
+    .date{
+        display: block;
+        margin-top: 8px;
         font-family: "Times New Roman", Times, serif;
         font-style: italic;
-        font-size: 10px;
-        color: rgb(187, 187, 187);
+        font-size: 9px;
+        color: rgb(146, 146, 146);
+      
     }
 
     ion-card{
-        width: 100% !important;
+        width: 75% !important;
         height: 50% !important;
         display: inline-block;
     }
@@ -26,6 +33,10 @@ page-home {
     img{
         width: 100% !important;
         height: 70% !important;
+    }
+
+    .card-content-md{
+        line-height: 1.0;
     }
 
 }

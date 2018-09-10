@@ -11,12 +11,13 @@
   <ion-card class="card" *ngFor="let new of listNews; let i=index" >
     <img id="img" src="{{content[i]}}"/>
     <ion-card-content >
-      <p>
+      <p><span class = "title">
         {{new.title}}
-      </p>
-      <span>
+      </span> <br/>
+      <span class ="date">
        {{atzString[i]}}
       </span>
+      </p>
     </ion-card-content>
   </ion-card>
  
