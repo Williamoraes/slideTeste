@@ -1,6 +1,6 @@
 page-home {
     .card{
-        border-radius: 10px;
+        border-radius: 12px;
     }
 
     .card-md p{
@@ -25,18 +25,19 @@ page-home {
     }
 
     ion-card{
-        width: 75% !important;
-        height: 50% !important;
+        width: 55% !important;
+        height: 35% !important;
         display: inline-block;
     }
 
     img{
         width: 100% !important;
-        height: 70% !important;
+        height: 60% !important;
     }
 
     .card-content-md{
         line-height: 1.0;
+        padding: 8px 5px 8px 10px;
     }
 
 }
