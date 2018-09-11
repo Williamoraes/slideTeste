@@ -29,9 +29,9 @@ export class HomePage {
   getNews(){
     
    this._noticiasProvider.getNews()
-                        .toPromise()
                         .then(data =>{ 
-                          const response = data as any;
+                          const _response = data as any;
+                          const response = JSON.parse(_response.data);
                           this.getInfo(response); // requisição dados da noticia (title, data);
 
                           return response   
@@ -42,8 +42,8 @@ export class HomePage {
                       }).then(data =>{ 
                         var allContent= [];
                         for(let i=0; i< data.list.length; i++){
-                          this._noticiasProvider.getImage(data.list[i].link).subscribe(data => { // requisição IMG
-                            const responseImg = data as any;
+                          this._noticiasProvider.getImage(data.list[i].link).then(data => { // requisição IMG
+                            const responseImg = (data as any).data;
                             document.getElementById('img').innerHTML = responseImg;
                             var img = document.getElementById('img').getElementsByTagName('meta');
                             for(let j=0; j<img.length; j++){
@@ -52,7 +52,6 @@ export class HomePage {
                               var contain = patt.test(allContent[j]);
                               if(contain == true){
                                 this.content[i] = allContent[j];
-                                console.log(allContent[j]);
                               }
                             }
                           });
