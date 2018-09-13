@@ -8,19 +8,17 @@
 
 <ion-content style="background-color: black" padding>
   <ion-scroll scrollX="true" direction="x">
-    <ion-card class="card" *ngFor="let new of listNews; let i=index" >
-      <img id="img" src="{{content[i]}}"/>
-      <ion-card-content >
-        <p><span class = "title1">
-          {{new.title}}
-        </span> <br/>
-        <span class ="date">
-        {{atzString[i]}}
-        </span>
-        </p>
-      </ion-card-content>
-    </ion-card>
+      <ion-card class="card" *ngFor="let date of dates; let i=index">
+        <img src="{{content[i]}}"/>
+        <ion-card-content >
+          <p><span class = "title1">
+            {{titles[i]}}
+          </span> <br/>
+          <span class ="date">
+            {{atzString[i]}}
+          </span>
+          </p>
+        </ion-card-content>
+      </ion-card>
   </ion-scroll>
-
- 
 </ion-content>

@@ -8,31 +8,33 @@ page-home {
     }
 
     .title1{
-
         font-family: "Times New Roman", Times, serif;
+        font-style: italic;
         font-size: 7px;
-        color: rgb(146, 146, 146);
+        color: rgb(129, 129, 129);
         white-space: normal;
         
     }
 
     .date{
-
         display: block;
         position: absolute;
-        bottom: 25px;
+        bottom: 5px;
         font-family: "Times New Roman", Times, serif;
         font-style: italic;
         font-size: 3px;
-        color: rgb(146, 146, 146);
+        color: rgb(129, 129, 129);
       
     }
 
     ion-card{
+        position: relative;
         width: 50% !important;
         height: 58% !important;
         display: inline-block;
     }
+
+ 
 
     img{
         width: 100% !important;
@@ -51,6 +53,8 @@ page-home {
     }
 
     ion-scroll {
+        position: relative;
+        top: 250px;
        // min-height: 500px; 
         height: 38%;
 
