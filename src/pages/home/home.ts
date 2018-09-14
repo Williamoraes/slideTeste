@@ -30,7 +30,7 @@ export class HomePage {
                         .then(data =>{ 
 
                           var testeTitles = [];
-                          var testeDates =[];
+                          var testeDates = [];
                           var testeLinks = [];
                         
                           var textResponse = (data.data as string);   
@@ -38,22 +38,9 @@ export class HomePage {
                           var _capDate = textResponse.split("pubDate");
                           var _capLink = textResponse.split("link");
 
-                          for(let i=0; i<_capTitle.length;i++){
-                            if(_capTitle[i].slice(-1) == '/'){
-                              testeTitles.push(_capTitle[i])
-                            }
-                          } 
-                          for(let i=0; i<_capDate.length;i++){
-                            if(_capDate[i].slice(-1) == '/'){
-                              testeDates.push(_capDate[i])
-                            }
-                          }
-                          
-                          for(let i=0; i<_capLink.length;i++){
-                            if(_capLink[i].slice(-1) == '/'){
-                              testeLinks.push(_capLink[i])
-                            }
-                          }
+                          testeTitles = this.treatsArray(_capTitle);
+                          testeDates = this.treatsArray(_capDate);
+                          testeLinks = this.treatsArray(_capLink);
 
                           for(let c=1; c<testeTitles.length;c++){
                              this.titles[c-1] = testeTitles[c].substring(1,testeTitles[c].length-2);
@@ -76,6 +63,16 @@ export class HomePage {
                       });          
   }
 
+  treatsArray(array : string[]) : any[]{
+    var arrayFinal = [];
+    for(let i=0; i<array.length;i++){
+      if(array[i].slice(-1) == '/'){
+        arrayFinal.push(array[i])
+      }
+    }
+    return arrayFinal;
+  }
+
   getImg(_data : Array<any>){
     var _capImg = [];
     var _capImgEf = []
@@ -85,11 +82,9 @@ export class HomePage {
         const responseImg = (data.data as string);
         _capImg = responseImg.split('"og:image" content="');
         _capImgEf = _capImg[1].split('" />');
-        console.log(_capImgEf);
         this.content[i] = _capImgEf[0];
       });
     }
-    console.log(this.content);
   }
 
   formatDate(date : Array<any>){
