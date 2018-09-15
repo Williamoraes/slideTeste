@@ -8,14 +8,14 @@
 
 <ion-content style="background-color: black" padding>
   <ion-scroll scrollX="true" direction="x">
-      <ion-card class="card" *ngFor="let date of dates; let i=index">
-        <img src="{{content[i]}}"/>
+      <ion-card class="card" *ngFor="let new of news; let i=index">
+        <img src="{{new.img}}"/>
         <ion-card-content >
           <p><span class = "title1">
-            {{titles[i]}}
+            {{new.title}}
           </span> <br/>
           <span class ="date">
-            {{atzString[i]}}
+            {{new.date}}
           </span>
           </p>
         </ion-card-content>
