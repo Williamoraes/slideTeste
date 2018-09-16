@@ -52,14 +52,13 @@ export class HomePage {
                             this.news[c-1].title = testeTitles[c].substring(1,testeTitles[c].length-2);
                             this.news[c-1].date = testeDates[c-1].substring(1,testeDates[c-1].length-2);
                             this.news[c-1].link = testeLinks[c].substring(1,testeLinks[c].length-2);
-                         //   this.teste.push(this.news[0]);
-                            this.titles[c-1] = testeTitles[c].substring(1,testeTitles[c].length-2);
+                           // this.teste[c-1]["title"] = testeTitles[c].substring(1,testeTitles[c].length-2);
                         //     this.dates[c-1] = testeDates[c-1].substring(1,testeDates[c-1].length-2);
                             this.links[c-1] = testeLinks[c].substring(1,testeLinks[c].length-2);
                             // console.log(news);
                           }  
  
-                          console.log(this.news);
+                          console.log();
    
                           this.formatDate(this.news);
                          
@@ -76,6 +75,7 @@ export class HomePage {
                       });          
   }
 
+
   treatsArray(array : string[]) : any[]{
     var arrayFinal = [];
     for(let i=0; i<array.length;i++){
@@ -91,7 +91,7 @@ export class HomePage {
     var _capImgEf = []
   
     for(let i=0; i< _data.length; i++){
-      this._noticiasProvider.getImage(_data[i]).subscribe(data => { // requisição IMG
+      this._noticiasProvider.getHttp(_data[i]).subscribe(data => { // requisição IMG
 
         const responseImg = (data as string);
         _capImg = responseImg.split('"og:image" content="');
@@ -99,7 +99,6 @@ export class HomePage {
         this.news[i].img = _capImgEf[0];
       });
     }
-    console.log(this.news)
   }
 
   formatDate(array){

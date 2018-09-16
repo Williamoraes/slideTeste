@@ -7,18 +7,22 @@
 </ion-header>
 
 <ion-content style="background-color: black" padding>
-  <ion-scroll scrollX="true" direction="x">
-      <ion-card class="card" *ngFor="let new of news; let i=index">
-        <img src="{{new.img}}"/>
-        <ion-card-content >
-          <p><span class = "title1">
-            {{new.title}}
-          </span> <br/>
-          <span class ="date">
-            {{new.date}}
-          </span>
-          </p>
-        </ion-card-content>
-      </ion-card>
-  </ion-scroll>
+    <ion-grid>
+      <ion-row nowrap class="rowWithScroll">
+        <ion-col col-6 *ngFor="let new of news; let i=index">
+            <div class="card" >
+                <img src="{{new.img}}" style="width:100%">
+                <div class="container">
+                    <p><span class = "title1">
+                        {{new.title}}
+                      </span> <br/>
+                      <span class ="date">
+                        {{new.date}}
+                      </span>
+                    </p>
+                </div>
+            </div>
+        </ion-col>  
+      </ion-row>     
+    </ion-grid>
 </ion-content>

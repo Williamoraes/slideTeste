@@ -1,15 +1,33 @@
 page-home {
-    .card{
-        border-radius: 12px;
+
+    [col-6]{
+        padding: 0px;
     }
 
-    .card-md p{
-        line-height: 0.6;
+    .card{
+        position: relative;
+     //   margin-top: 50px;
+        border-radius: 12px;
+        background-color: white;
+        height: 70%;
+        width: 85%;
     }
+    
+
+    .container {
+        position: relative;
+        padding: 2px 8px;
+    }
+
+    //.card-md p{
+    //    line-height: 0.6;
+    //}
 
     .title1{
+        position: absolute;
         font-family: "Times New Roman", Times, serif;
         font-style: italic;
+        top: 3px;
         font-size: 7px;
         color: rgb(129, 129, 129);
         white-space: normal;
@@ -19,7 +37,7 @@ page-home {
     .date{
         display: block;
         position: absolute;
-        bottom: 5px;
+        bottom: -15px;
         font-family: "Times New Roman", Times, serif;
         font-style: italic;
         font-size: 3px;
@@ -27,18 +45,10 @@ page-home {
       
     }
 
-    ion-card{
-        position: relative;
-        width: 50% !important;
-        height: 58% !important;
-        display: inline-block;
-    }
-
- 
-
     img{
         width: 100% !important;
-        height: 60% !important;
+        height: 55% !important;
+        border-radius: 12px 12px 0 0;
     }
 
     .card-content-md{
@@ -46,21 +56,26 @@ page-home {
         padding: 6px 5px 8px 10px;
     }
 
-    .scroll-zoom-wrapper {
-        white-space: nowrap;
-        width: 300px;
-        height: 300px;
-    }
-
-    ion-scroll {
+    ion-row {
         position: relative;
-        top: 250px;
+        padding-left: 20px;
+       // margin-bottom: -100px;
+        //top: 250px;
        // min-height: 500px; 
-        height: 38%;
+        height: 80%;
 
             .scroll-content {
             padding: 0px !important;
         }    
     }
+    
+
+    .rowWithScroll{
+        overflow-x: scroll !important;
+        overflow-y: hidden;
+      //  word-wrap: break-word;
+      //  font-size:0.8em;
+       // font-weight:300;
+}
 
 }

@@ -17,7 +17,7 @@ export class NoticiasProvider {
 
       }
 
-      getImage(link){
+      getHttp(link){
         return this.http.get(link, {responseType: 'text'})
 
       }
